@@ -2,10 +2,11 @@ const {
   createDogsDb,
   getAllDogs,
   getDogsById,
+  /*sortDogs,
+  deleteDogs,
   //getAllTemperaments,
-  //postDog,
+  //postDog, */
 } = require("../controllers/userController");
-
 
 const getDogsHandler = async (req, res) => {
   const { name } = req.query;
@@ -20,11 +21,8 @@ const getDogsHandler = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
-//params --> /:id
-
 const getDogsIdHandler = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params;  //by requesting params, we search for a specific element in the dog collection array
   try {
     const response = await getDogsById(id);
     res.status(200).json(response);
@@ -32,8 +30,6 @@ const getDogsIdHandler = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
-//--> body
 
 const createDogsHandler = async (req, res) => {
   const { name, image, id, height, weight, life_span, temperament } = req.body;
@@ -45,8 +41,4 @@ const createDogsHandler = async (req, res) => {
   }
 };
 
-module.exports = {
-  getDogsHandler,
-  getDogsIdHandler,
-  createDogsHandler,
-};
+module.exports = {getDogsHandler, getDogsIdHandler, createDogsHandler};

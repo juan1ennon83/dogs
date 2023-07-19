@@ -1,6 +1,6 @@
 const { Router } = require (' express');
-const { getDogsById, getDogsByName, getAllDogs, getAllTemperaments } = require ('../controllers/getDogs');
-
+const { getDogsById, getDogsByName } = require ('../controllers/');
+const { getAllTemperaments } = require ('../controllers/');
 const dogsRouter = Router ();
 
 dogsRouter.get('/id', getDogsById);
