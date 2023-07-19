@@ -11,9 +11,9 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.TEXT, //verificar si es STRING
       allowNull: false,
-    },   // name, image, id, height, weight, life_span, temperament;
+    },   
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING,     
         allowNull: false,
         unique: true,
   },
@@ -28,8 +28,12 @@ module.exports = (sequelize) => {
       life_span: {
         type: DataTypes.INTEGER,
       allowNull: false,
-  }}
-    );
+  },
+      temperaments: {
+        type: DataTypes.STRING,
+      allowNull: false,
+      }},
+       {timestamp: false});
 };
 
 

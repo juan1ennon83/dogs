@@ -1,19 +1,20 @@
 const {
-  createUserDb,
-  getAllUsers,
-  getUserById,
+  createDogsDb,
+  getAllDogs,
+  getDogsById,
+  //getAllTemperaments,
+  //postDog,
 } = require("../controllers/userController");
 
-//query --> /?name=nicolas&apellido=burgueño
 
-const getUserHandler = async (req, res) => {
+const getDogsHandler = async (req, res) => {
   const { name } = req.query;
   try {
     if (name) {
-      const response = await getAllUsers(name);
+      const response = await getAllDogs(name);
       return res.status(200).json(response);
     }
-    const response = await getAllUsers();
+    const response = await getAllDogs();
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -22,10 +23,10 @@ const getUserHandler = async (req, res) => {
 
 //params --> /:id
 
-const getUserIdHandler = async (req, res) => {
+const getDogsIdHandler = async (req, res) => {
   const { id } = req.params;
   try {
-    const response = await getUserById(id);
+    const response = await getDogsById(id);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -34,10 +35,10 @@ const getUserIdHandler = async (req, res) => {
 
 //--> body
 
-const createUserHandler = async (req, res) => {
+const createDogsHandler = async (req, res) => {
   const { name, image, id, height, weight, life_span, temperament } = req.body;
   try {
-    const response = await createUserDb(name, image, id, height, weight, life_span, temperament);
+    const response = await createDogsDb(name, image, id, height, weight, life_span, temperament);
     res.status(201).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -45,7 +46,7 @@ const createUserHandler = async (req, res) => {
 };
 
 module.exports = {
-  getUserHandler,
-  getUserIdHandler,
-  createUserHandler,
+  getDogsHandler,
+  getDogsIdHandler,
+  createDogsHandler,
 };

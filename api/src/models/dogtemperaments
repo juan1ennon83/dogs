@@ -1,17 +1,17 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('dogtemper', {   //my dog model creation based on PI request parameters
+  sequelize.define('dogtemperaments', {   //my dog model creation based on PI request parameters
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false, 
     },
-    name: {
+    temperament: {    //name = breed 
         type: DataTypes.STRING,
         allowNull: false,
-        // unique: true,  (verificar)
+        unique: true,  //(verificar)
   },
 });
 }
