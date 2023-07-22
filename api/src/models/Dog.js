@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
       allowNull: false, 
     },
     image: {
-      type: DataTypes.TEXT, //verificar si es STRING
+      type: DataTypes.STRING,
       allowNull: false,
     },   
       name: {
@@ -29,10 +29,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
       allowNull: false,
   },
-      temperaments: {
-        type: DataTypes.STRING,
-      allowNull: false,
-      }},
+},
        {timestamp: false});
 };
 

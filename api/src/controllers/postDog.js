@@ -1,27 +1,19 @@
-const [ Dog, Temperament ] = require('../dB');
-const axios = require("axios");
+const [ dogbreeds, dogtemperaments ] = require('../dB');
+
 
 const postDogs = async ({
-    id, image, breed, height, weight, life_span, temperament
+    image, name, height, weight, life_span, temperament
 }) => {
-    const apiUrl = await axios.get("https://thedogapi.org/v1/breeds");
-    const apiData = await apiUrl.data.map((dog) => {
-        return {
-            id: dog.id,
-            image: dog.image.url,
-            breed: dog.name,
-            height: dog.height.metric,
-            weight: dog.weight.metric,
-            life_span: dog.life_span,
-            temperament: dog.temperament,
-            origin: dog.origin,
-        };
-    });
-    return apiData;
-    };
-
-    const getDogsFromDB = async () => {
-        return await Dog.findAll({
+    const newDog =
+        await dogbreeds.create({
+            image,
+            name,
+            height,
+            weight,
+            life_span,
+        })
+    
+    const temperamentDB =  await dogtemperaments.findAll({
             include: {
                 model: Temperament,
                 attributes: ["temperament"],
@@ -30,13 +22,9 @@ const postDogs = async ({
             },
             },
         });
-    }
 
-    const getAllDogs = async () => {
-        let apiData = await getDogsFromApi ();
-        let dbData = await getDogsFromDB ();
-        const allData = dbData.concat(apiData); //verificar si se pone concat en apiData
-        return allData; // sugeria .map
-    };
+    await newDog.Adddogtemperaments(temperamentDB);
+    return newDog;
+}
 
-module.exports = getAllDogs, postDogs;
+module.exports = postDogs;

@@ -1,11 +1,11 @@
-const {
+/*const {
   createDogsDb,
   getAllDogs,
   getDogsById,
   /*sortDogs,
   deleteDogs,
   //getAllTemperaments,
-  //postDog, */
+  //postDog, 
 } = require("../controllers/userController");
 
 const getDogsHandler = async (req, res) => {
@@ -42,3 +42,4 @@ const createDogsHandler = async (req, res) => {
 };
 
 module.exports = {getDogsHandler, getDogsIdHandler, createDogsHandler};
+*/

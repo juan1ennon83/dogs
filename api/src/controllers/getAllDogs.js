@@ -2,12 +2,12 @@ const [ Dog, Temperament ] = require('../dB');
 const axios = require("axios");
 
 const getDogsFromApi = async () => {
-    const apiUrl = await axios.get("https://thedogapi.org/v1/breeds");
+    const apiUrl = await axios.get("https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}&limit=8");
     const apiData = await apiUrl.data.map((dog) => {
         return {
             id: dog.id,
             image: dog.image.url,
-            breed: dog.name,
+            name: dog.name,
             height: dog.height.metric,
             weight: dog.weight.metric,
             life_span: dog.life_span,

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('dogtemperaments', {   //my dog model creation based on PI request parameters
+  sequelize.define('temperament', {   //my dog model creation based on PI request parameters
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -13,5 +13,5 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,  //(verificar)
   },
-});
+}, {timestamp: false});
 }
