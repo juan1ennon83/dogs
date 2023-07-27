@@ -1,13 +1,16 @@
-/*const { Router } = require("express");
-const { dogsHandler, getDogsHandler } = require("../handlers/DogsHandler");
-const postDogsHandler = require("../handlers/postDogsHandler");
+const { Router } = require('express');
+const { 
+  getALLDogsHandler, 
+  getByIDHandler,
+  getAllDogsByNameHandler,
+ } = require('../handlers/getDogsHandler');
+const postDogHandler = require('../handlers/postDogsHandler');
 
-const DogsRoutes= Router();
+const dogs = Router();
 
-DogsRoutes.get("/:id", getDogsDetailHandler);
-DogsRoutes.get("/", getDogsHandler);
-DogsRoutes.post("/", postDogsHandler);
+dogs.get( '/', getALLDogsHandler );
+dogs.get( '/:id', getByIDHandler );
+dogs.get( '/name', getAllDogsByNameHandler );
+dogs.post( '/',  postDogHandler );;
 
-
-module.exports = DogsRoutes;
-*/
+module.exports = dogs;
