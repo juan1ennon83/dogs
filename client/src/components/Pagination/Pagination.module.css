@@ -1,0 +1,89 @@
+.buttons{
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+}
+
+.nextButton {
+    position: relative;
+    border-radius: 0 12px 12px 0;
+    width: 60px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #fbff1a;
+    color: #000000;
+    cursor: pointer;
+}
+
+.nextButton:hover {
+    background: #fbff1a;
+    transition: .5s;
+}
+
+.prevButton {
+    position: relative;
+    border-radius: 12px 0 0 12px;
+    width: 60px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #fbff1a;
+    color: #020101;
+    cursor: pointer;
+}
+
+.prevButton:hover {
+    background: #fbff1a;
+    transition: .5s;
+}
+
+.pageButton {
+    position: relative;
+    border-radius: 12px 12px 12px 12px;
+    width: 30px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #c0c336b3;
+    color: #000000;
+    cursor: pointer;
+}
+
+.pageButton:hover {
+    background: #fbff1a;
+    transition: .5s;
+}
+
+.pageButtonActive {
+    position: relative;
+    border-radius: 12px 12px 12px 12px;
+    width: 30px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #fbff1a;
+    color: #000000;
+}
+
+.prevButtonActive {
+    position: relative;
+    border-radius: 12px 0 0 12px;
+    width: 60px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #fbff1a;
+    color: #000000;
+}
+
+.nextButtonActive {
+    position: relative;
+    border-radius: 0 12px 12px 0;
+    width: 60px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #fbff1a;
+    color: #000000;
+}

@@ -9,11 +9,11 @@ const Home = () => {
     const dogs = useSelector(state => state.dogs);
     const allTemperaments = useSelector(state => state.temperaments);
     const filter = useSelector(state => state.filter);
-    const dogsPerPage = 8;
-    const pageNumberLimit = 5;
+    const dogsPerPage = 8;   //Selected maximum per Henry request
+    const pageNumberLimit = 7;
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
+    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(7);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
     const [form, setForm] = useState({ temperaments: [] });
     const [formAPIDB, setformAPIDB] = useState({ filterApiDB: [] });

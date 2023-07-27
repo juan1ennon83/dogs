@@ -17,6 +17,8 @@ body {
   width: 100%;
   max-width: 1200px;
   align-items: center;
+  padding: 60px;
+  padding-left: 180px;
   justify-content: space-around;
 }
 

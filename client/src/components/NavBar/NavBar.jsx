@@ -5,7 +5,7 @@ import style from "./NavBar.module.css"
 const NavBar = () => {
     return (
         <div className={style.container}>
-            <img src="https://assets.soyhenry.com/henry-landing/assets/Henry/logo-white.png" alt="img" />
+            <img src="https://media.tenor.com/6_-osAtLuHUAAAAi/wave-cute.gif" alt="img" />
             <ul>
                 <Link to="/home">
                     <li>- Home -</li>
