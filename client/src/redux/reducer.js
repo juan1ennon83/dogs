@@ -17,6 +17,7 @@ import {
 const initialState = {
   dogs: [],
   dog: [],
+  dogsbreed: [],
   temperaments: [],
   loading: false,
   filter: false
@@ -29,7 +30,8 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state, 
         dogs: payload, 
         filter: true, 
-        loading: true 
+        loading: true,
+        dogsbreed: payload,
       }
     case GET_ALL_TEMPERAMENTS:
       return { 

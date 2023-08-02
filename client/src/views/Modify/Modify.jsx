@@ -31,6 +31,7 @@ const Modify = () => {
 
     const [form, setForm] = useState({
         name: dog.name,
+        breed: dog.breed,
         image: dog.image,
         minHeight: dog.minHeight,
         maxHeight: dog.maxHeight,

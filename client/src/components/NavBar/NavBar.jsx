@@ -4,7 +4,8 @@ import style from "./NavBar.module.css"
 
 const NavBar = () => {
     return (
-        <div className={style.container}>
+        <div className={style.container}> 
+            <img src="https://stonkstutors.com/wp-content/uploads/2022/07/Soy-Henry-Entiende-como-funciona-la-plataforma-y-si-vale-la-pena.jpg" alt="img" />
             <img src="https://media.tenor.com/6_-osAtLuHUAAAAi/wave-cute.gif" alt="img" />
             <ul>
                 <Link to="/home">

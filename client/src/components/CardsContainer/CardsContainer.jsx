@@ -17,6 +17,7 @@ const CardsContainer = ({ dogs }) => {
                                 key={dog.id}
                                 id={dog.id}
                                 name={dog.name}
+                                breed={dog.breed}
                                 image={dog.image}
                                 minWeight={dog.minWeight}
                                 maxWeight={dog.maxWeight}
@@ -28,8 +29,8 @@ const CardsContainer = ({ dogs }) => {
                     <Card
                         key="no-info"
                         id="no-info"
-                        name="No doggy breed found"
-                        image='../public/cry.png'
+                        breed="No doggy breed found"
+                        image='https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/rockcms/2022-01/210602-doge-meme-nft-mb-1715-8afb7e.jpg'
                         minWeight="0"
                         maxWeight="0"
                         temperaments="There is no information"

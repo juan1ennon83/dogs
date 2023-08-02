@@ -23,14 +23,15 @@ body {
 }
 
 .container h1 {
+  padding: 20px;
   color: #000000;
   font-size: 500%;
   text-shadow: 0 0 10px rgb(239, 218, 26);
 }
 
 .container h3 {
-  color: #fbe714;
-  text-shadow: 0 0 10px black;
+  color: #1d27e8;
+  text-shadow: 0 0 12px black;
 }
 
 .container button {
@@ -50,6 +51,6 @@ body {
 }
 
 .container button:hover {
-  background: #6fb6ed;
-  transition: .5s;
+  background: #335fc7;
+  transition: .1s;
 }

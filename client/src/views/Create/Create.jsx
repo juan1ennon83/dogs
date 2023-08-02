@@ -1,13 +1,17 @@
 import { useState, useEffect, React } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTemperaments } from '../../redux/actions';
+//import Validate from './Validation';
 import style from './Create.module.css';
 import axios from 'axios';
 
 
+//In this module, we Create the Dog Form so that any user can upload a desired dog of their own.
+
 const Create = () => {
     const dispatch = useDispatch();
     const allTemperaments = useSelector(state => state.temperaments);
+    const breed = useSelector (state => state.dogsbreed);
     const [errors, setErrors] = useState({})
     const [modal, setModal] = useState(false);
     const [apiResponse, setApiResponse] = useState("");
@@ -16,6 +20,9 @@ const Create = () => {
     const regexURL = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/;
     const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/;
 
+       // console.log(breed, "New state HERE");
+       // console.log(allTemperaments, "Test for all Temps");
+
     useEffect(() => {
         dispatch(getAllTemperaments());
     }, [dispatch]);
@@ -23,6 +30,7 @@ const Create = () => {
 
     const [form, setForm] = useState({
         name: "",
+        breed: [],
         image: "",
         minHeight: 0,
         maxHeight: 0,
@@ -62,6 +70,7 @@ const Create = () => {
                     setErrors({});
                     setForm({
                         name: "",
+                        breed: [],
                         image: "",
                         minHeight: 0,
                         maxHeight: 0,
@@ -188,13 +197,25 @@ const Create = () => {
             )
             }
             <div className={style.title}>
-                <h2> CREATE A DOG! </h2>
+                <h2> CREATE A DOGGY! </h2>
             </div>
             <label>Name: </label>
             <input type="text" value={form.name} name="name" onChange={changeHandler} />
             <span className={style.error}>
                 {errors.name && <><img className={style.img} src="error-icon.png" alt="error"></img><span className={style.span}>{errors.name}</span></>}
             </span>
+            <br />
+            <label>Breed: </label>
+            <select onChange={selectHandler}>
+                <option disabled defaultValue selected> Select your dog breed</option>
+                {breed?.map((name) => {
+                    return (
+                        <option key={name.id} name={name.name}>
+                            {name.name}
+                        </option>
+                    );
+                })}
+            </select>
             <br />
             <label>Image URL: </label>
             <input type="url" value={form.image} name="image" onChange={changeHandler} />
