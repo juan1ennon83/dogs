@@ -11,6 +11,8 @@ import {
   RESET_DOG,
   RESET_LOADING,
   RESET_DOGS,
+  //DELETE_DOG,
+  //PUT_DOG,
 } from './actions-types.js';
 import axios from 'axios';
 
@@ -158,7 +160,6 @@ export const resetFilter = () => {
     });
   };
 };
-
 export const resetDog = () => {
   return function (dispatch) {
     dispatch({ 
@@ -182,3 +183,17 @@ export const resetDogs = () => {
     });
   };
 };
+
+/*
+export const deleteDogs = (id) => async (dispatch) => {
+  try {
+    const deleteDoggy = await axios.get(`/dogs?delete=${id}`)  //
+    return dispatch({ 
+      type: DELETE_DOG, 
+      payload: deleteDoggy
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+*/

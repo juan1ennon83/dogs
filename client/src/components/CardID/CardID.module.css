@@ -2,7 +2,7 @@
     width: 1200px;
     height: 450px;
     border-radius: 10px;
-    box-shadow: 0 2px 2px #ca5d5d9e;
+    box-shadow: 0 2px 2px #2f48e99e;
     overflow: hidden;
     display: flex;
     margin: 4%;
@@ -38,7 +38,7 @@
 }
 
 .name {
-    color: #1076c5;
+    color: #070604;
 }
 
 .container p {
@@ -124,7 +124,7 @@ body.active-modal {
 }
 
 .buttonCancel:hover {
-    background: #2e6189;
+    background: #fcff50;
     transition: .5s;
 }
 
@@ -157,7 +157,7 @@ body.active-modal {
 }
 
 .buttonModify:hover {
-    background: #2e6189;
+    background: #fffd72;
     transition: .5s;
 }
 

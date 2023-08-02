@@ -7,7 +7,7 @@
     margin: 2%;
     text-align: center;
     transition: all 0.20s;
-    background: #fbb07ee0;
+    background: #c2a23076;
 }
 
 .card:hover{
@@ -22,7 +22,7 @@
 }
 
 .name {
-    color: #0e22b9;
+    color: #2623dd;
     font-weight: 660;
 }
 
@@ -39,7 +39,7 @@
 .enlace {
     font-size: 15px;
     font-weight: 250;
-    color: #1e30ba;
-    text-decoration-thickness: 2;
+    color: #1422a1;
+    text-decoration-thickness: 4;
 }
 
